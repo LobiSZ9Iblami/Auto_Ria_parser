@@ -29,9 +29,3 @@ Thumbs.db
 tests/.env.test
 .dockerignore
 
-# Alembic
-alembic.ini
-app/db/alembic/__pycache__/
-app/db/alembic/*.pyc
-app/db/alembic/versions/__pycache__/
-app/db/alembic/versions/*.pyc

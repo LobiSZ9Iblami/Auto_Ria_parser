@@ -21,7 +21,7 @@ Thumbs.db
 *.swp
 
 # Environment secrets
-app/.env
+.env
 *.secret
 tests/.env.test
 
