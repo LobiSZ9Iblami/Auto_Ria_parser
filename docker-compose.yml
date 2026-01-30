@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:15
+    container_name: autorIa_db
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  scraper:
+    build: .
+    container_name: autorIa_scraper
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - ./dumps:/app/dumps
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
